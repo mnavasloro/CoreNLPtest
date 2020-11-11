@@ -59,15 +59,15 @@ public class BasicAnnotator implements Annotator {
                 sentNo = term.getSent();
             }
 
-            List<CoreMap> sentences = new ArrayList<>();
-            ArrayList<CoreLabel> tokens = new ArrayList<>();
+            List<CoreMap> sentences = new ArrayList<CoreMap>();
+            ArrayList<CoreLabel> tokens = new ArrayList<CoreLabel>();
             int tokenIndex = 0;
 
             for (int i = 1; i <= sentNo; i++) {
                 int index = 0;
 
                 CoreMap sent = new ArrayCoreMap(1);
-                List<CoreLabel> sentTokens = new ArrayList<>();
+                List<CoreLabel> sentTokens = new ArrayList<CoreLabel>();
                 int sIndex = i - 1;
 
                 List<Term> terms = document.getTermsBySent(i);
@@ -110,7 +110,7 @@ public class BasicAnnotator implements Annotator {
 
     @Override
     public Set<Class<? extends CoreAnnotation>> requirementsSatisfied() {
-        return Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
+        return Collections.unmodifiableSet(new HashSet<Class<? extends CoreAnnotation>>(Arrays.asList(
                 CoreAnnotations.TokensAnnotation.class,
                 CoreAnnotations.SentencesAnnotation.class,
                 CoreAnnotations.PartOfSpeechAnnotation.class,
