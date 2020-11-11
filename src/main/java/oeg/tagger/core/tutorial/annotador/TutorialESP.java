@@ -28,8 +28,8 @@ public class TutorialESP {
         Properties properties = StringUtils.argsToProperties(new String[]{"-props", "StanfordCoreNLP-spanish.properties"});
 
         // Path de los modelos de IXA para el lematizador y el pos
-        String posModel = "../CoreNLPtest-core/src/main/resources/ixa-pipes/morph-models-1.5.0/es/es-pos-perceptron-autodict01-ancora-2.0.bin";
-        String lemmaModel = "../CoreNLPtest-core/src/main/resources/ixa-pipes/morph-models-1.5.0/es/es-lemma-perceptron-ancora-2.0.bin";
+        String posModel = "../CoreNLPtest/src/main/resources/ixa-pipes/morph-models-1.5.0/es/es-pos-perceptron-autodict01-ancora-2.0.bin";
+        String lemmaModel = "../CoreNLPtest/src/main/resources/ixa-pipes/morph-models-1.5.0/es/es-lemma-perceptron-ancora-2.0.bin";
 
         properties.setProperty("annotators", "tokenize,ssplit,spanish,readability");
 //      Este es el pipeline que tenia yo, por si en algun momento lo quereis expandir:
