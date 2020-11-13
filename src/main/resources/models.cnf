@@ -1,0 +1,5 @@
+eng	deps	C:\Users\mnavas\CODE\CoreNLPtest\src\main\resources\models\eng\CoNLL2009-ST-English-ALL.anna-3.3.parser.model
+eng	srl	C:\Users\mnavas\CODE\CoreNLPtest\src\main\resources\models\eng\srl-eng.model
+spa	deps	C:\Users\mnavas\CODE\CoreNLPtest\src\main\resources\models\spa\CoNLL2009-ST-Spanish-ALL.anna-3.3.parser.model
+spa	srl	C:\Users\mnavas\CODE\CoreNLPtest\src\main\resources\models\spa\srl-spa.model
+spa	morph	C:\Users\mnavas\CODE\CoreNLPtest\src\main\resources\models\spa\CoNLL2009-ST-Spanish-ALL.anna-3.3.morphtagger.model

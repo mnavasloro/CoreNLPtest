@@ -123,4 +123,23 @@ public class BasicAnnotator implements Annotator {
         return Collections.emptySet();
     }
 
+    public String annotateKAF(Annotation annotation) {
+        String text = annotation.get(CoreAnnotations.TextAnnotation.class);
+        if (text != null) {
+            InputStream is = new ByteArrayInputStream(text.getBytes());
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            Annotate annotator = new Annotate(br, tokProperties);
+            KAFDocument document = new KAFDocument("es", "1");
+            try {
+                annotator.tokenizeToKAF(document);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            model.getPosAnnotator().annotatePOSToKAF(document);
+            return document.toString();
+        }
+        return "";
+
+    }
 }

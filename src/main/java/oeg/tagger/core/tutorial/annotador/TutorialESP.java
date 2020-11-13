@@ -49,7 +49,7 @@ public class TutorialESP {
 
 
         // Un texto de ejemplo. En vuestro caso, lo recibiriais en la request.
-        String txt = "Esto es una prueba de cómo anota IXA.";
+        String txt = "Ella come manzanas.";
 
         // Lo anotamos
         Annotation annotation = new Annotation(txt);
