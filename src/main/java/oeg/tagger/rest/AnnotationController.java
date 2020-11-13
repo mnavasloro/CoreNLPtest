@@ -154,7 +154,6 @@ public class AnnotationController {
 
 
 StanfordCoreNLP pipeline;
-StanfordCoreNLP pipeline;
 
 public String annotate(String txt) {
         String res = "";
