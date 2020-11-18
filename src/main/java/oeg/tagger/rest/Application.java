@@ -35,5 +35,7 @@ public class Application {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}    
+        
+        
     
 }
