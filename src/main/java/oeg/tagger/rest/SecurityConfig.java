@@ -31,5 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 protected void configure(HttpSecurity http) throws Exception {
      http.addFilterBefore(new RequestRejectedExceptionFilter(),
              ChannelProcessingFilter.class);
+     	    http.authorizeRequests().antMatchers("/internal/**").hasAnyRole("ADMIN","USER").and().httpBasic().and().csrf().disable();		   
+
 }
 }
