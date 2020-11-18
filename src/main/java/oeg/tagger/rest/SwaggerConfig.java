@@ -28,8 +28,8 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI springShopOpenAPI() {
         return new OpenAPI()//.addServersItem(new Server().url("https://annotador.oeg.fi.upm.es/"))
-                .info(new Info().title("Annotador REST API")
-                .description("Temporal Expression tagger service. It handles intervals, dates, durations, times and sets of temporal expressions in English and Spanish.")
+                .info(new Info().title("Lemmatization, pos tagging and semantic role labelling API")
+                .description("For internal consumption only - Excuse our lazy coding here.")
                 .version("1.0")
                 .license(new License().name("GPLv3").url("https://github.com/mnavasloro/Annotador/blob/master/LICENSE")))
                 .externalDocs(new ExternalDocumentation()
