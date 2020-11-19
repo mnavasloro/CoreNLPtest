@@ -56,7 +56,7 @@ public class AnnotationController {
     @ApiResponse(responseCode = "401", description = "Internal error"),
     @ApiResponse(responseCode = "500", description = "Server error")})
     @RequestMapping(value = "/annotate/pos", method = RequestMethod.POST) //, produces = {"text/plain"}, consumes = {"text/plain"}
-    public ResponseEntity<String> pos(@Parameter(name = "Text to annotate") @RequestBody String txtinput) 
+    public ResponseEntity<String> pos(@RequestBody String txtinput)  //@Parameter(name = "Text to annotate"),  
     {
         try{
             String out = annotate(txtinput);
