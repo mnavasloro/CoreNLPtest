@@ -82,10 +82,10 @@ public class AnnotationController {
     @ApiResponse(responseCode = "401", description = "Internal error"),
     @ApiResponse(responseCode = "500", description = "NIF ERROR")})
     @RequestMapping(value = "/srl", method = RequestMethod.GET)
-    public ResponseEntity<String> srl(@Parameter(name = "Text to annotate") @RequestBody String txt) {
+    public ResponseEntity<String> srl(@RequestParam String txt) {
             try{
                 String out = annotate2(txt);
-            return new ResponseEntity(out, HttpStatus.OK);
+                return new ResponseEntity(out, HttpStatus.OK);
             } catch(Exception e){
                 HttpHeaders responseHeaders = new HttpHeaders();
             responseHeaders.set("Content-Type", "application/json;charset=UTF-8");
