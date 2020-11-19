@@ -55,11 +55,11 @@ public class AnnotationController {
     @ApiResponse(responseCode = "404", description = "Model not found"),
     @ApiResponse(responseCode = "401", description = "Internal error"),
     @ApiResponse(responseCode = "500", description = "Server error")})
-    @RequestMapping(value = "/annotate/pos", method = RequestMethod.POST, consumes = {"text/plain"}) //, produces = {"text/plain"}, consumes = {"text/plain"}
-    public ResponseEntity<String> pos(@RequestBody String txtinput)  //@Parameter(name = "Text to annotate"),  
+    @RequestMapping(value = "/pos", method = RequestMethod.GET) //, produces = {"text/plain"}, consumes = {"text/plain"}
+    public ResponseEntity<String> pos(@RequestParam String txt)  
     {
         try{
-            String out = annotate(txtinput);
+            String out = annotate(txt);
             return new ResponseEntity(out, HttpStatus.OK);
         } catch(Exception e){
             HttpHeaders responseHeaders = new HttpHeaders();
@@ -76,21 +76,15 @@ public class AnnotationController {
     
     @Operation(summary = "Annotates every possible temporal entity", description = "", tags = "annotation")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Successfully annotated")
-        
-        ,@ApiResponse(responseCode = "403", description = "Access denied"),
-    @ApiResponse(responseCode = "404", description = "Model not found")
-        ,
-    @ApiResponse(responseCode = "401", description = "Internal error")
-        ,
+    @ApiResponse(responseCode = "200", description = "Successfully annotated"),
+    @ApiResponse(responseCode = "403", description = "Access denied"),
+    @ApiResponse(responseCode = "404", description = "Model not found"),
+    @ApiResponse(responseCode = "401", description = "Internal error"),
     @ApiResponse(responseCode = "500", description = "NIF ERROR")})
-    @RequestMapping(value = "/annotate/srl", method = RequestMethod.POST, produces = {"text/plain"}, consumes = {"text/plain"})//, "application/xml"})
-//    @Async("threadPoolTaskExecutor")
-    public ResponseEntity<String> temporalKAF(
-            @Parameter(name = "Text to annotate") @RequestBody String txtinput         ) {
-
-                   try{
-                String out = annotate2(txtinput);
+    @RequestMapping(value = "/srl", method = RequestMethod.GET)
+    public ResponseEntity<String> srl(@Parameter(name = "Text to annotate") @RequestBody String txt) {
+            try{
+                String out = annotate2(txt);
             return new ResponseEntity(out, HttpStatus.OK);
             } catch(Exception e){
                 HttpHeaders responseHeaders = new HttpHeaders();
