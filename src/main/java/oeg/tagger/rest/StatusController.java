@@ -8,21 +8,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
+ * Status method to show internal information.
  * @author vroddon
  */
 @RestController
 public class StatusController {
 
-
-    @RequestMapping(value = "/status", method = RequestMethod.POST)
+    @RequestMapping(value = "/status", method = RequestMethod.GET)
     public ResponseEntity<String> status()
     {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("errorcode", "ok");
             String out = jsonObject.toString();
-            return new ResponseEntity(out, HttpStatus.OK);//;
+            return new ResponseEntity(out, HttpStatus.OK);
     }
-            
     
 }

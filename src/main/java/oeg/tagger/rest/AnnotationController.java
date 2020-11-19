@@ -50,32 +50,26 @@ public class AnnotationController {
 
     @Operation(summary = "Annotates every possible temporal entity", description = "", tags = "annotation")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Successfully annotated")
-        
-        ,@ApiResponse(responseCode = "403", description = "Access denied"),
-    @ApiResponse(responseCode = "404", description = "Model not found")
-        ,
-    @ApiResponse(responseCode = "401", description = "Internal error")
-        ,
-    @ApiResponse(responseCode = "500", description = "NIF ERROR")})
-    @RequestMapping(value = "/annotate/pos", method = RequestMethod.POST, produces = {"text/plain"}, consumes = {"text/plain"})//, "application/xml"})
-//    @Async("threadPoolTaskExecutor")
-    public ResponseEntity<String> temporalTXT2TXT(
-            @Parameter(name = "Text to annotate") @RequestBody String txtinput         ) {
-
-                   try{
-                String out = annotate(txtinput);
+    @ApiResponse(responseCode = "200", description = "Successfully annotated"),
+    @ApiResponse(responseCode = "403", description = "Access denied"),
+    @ApiResponse(responseCode = "404", description = "Model not found"),
+    @ApiResponse(responseCode = "401", description = "Internal error"),
+    @ApiResponse(responseCode = "500", description = "Server error")})
+    @RequestMapping(value = "/annotate/pos", method = RequestMethod.POST) //, produces = {"text/plain"}, consumes = {"text/plain"}
+    public ResponseEntity<String> pos(@Parameter(name = "Text to annotate") @RequestBody String txtinput) 
+    {
+        try{
+            String out = annotate(txtinput);
             return new ResponseEntity(out, HttpStatus.OK);
-            } catch(Exception e){
-                HttpHeaders responseHeaders = new HttpHeaders();
+        } catch(Exception e){
+            HttpHeaders responseHeaders = new HttpHeaders();
             responseHeaders.set("Content-Type", "application/json;charset=UTF-8");
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("code", "L500");
             jsonObject.put("message", e.toString());
             String payload = jsonObject.toString();
             return new ResponseEntity(payload, responseHeaders,HttpStatus.BAD_REQUEST);//;
-            }//;
-
+        }
     }
     
     
