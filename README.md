@@ -5,9 +5,12 @@ Two services available for Spanish:
 
 ## POS and LEMMA
 > '/pos'
-> GET method
-> parameter: plain text
-> returns json, with POS following the Spanish [EAGLES tagset](https://web.archive.org/web/20160325024315/http://nlp.lsi.upc.edu/freeling/doc/tagsets/tagset-es.html) 
+
+GET method
+
+parameter: plain text
+
+returns json, with POS following the Spanish [EAGLES tagset](https://web.archive.org/web/20160325024315/http://nlp.lsi.upc.edu/freeling/doc/tagsets/tagset-es.html) 
 
 Example for the sentence "Ella come patatas"
 
@@ -30,9 +33,12 @@ Return:
 
 ## SRL and deps
 > '/srl'
-> GET method
-> parameter: plain text
-> returns [NAF](https://github.com/newsreader/NAF) (xml)
+
+GET method
+
+parameter: plain text
+
+returns [NAF](https://github.com/newsreader/NAF) (xml)
 
 Example for the sentence "Ella come patatas"
 
