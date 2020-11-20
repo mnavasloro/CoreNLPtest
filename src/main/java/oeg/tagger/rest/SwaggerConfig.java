@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 .info(new Info().title("Lemmatization, pos tagging and semantic role labelling API")
                 .description("For internal consumption only - Excuse our lazy coding here.")
                 .version("1.0")
-                .license(new License().name("GPLv3").url("https://github.com/mnavasloro/Annotador/blob/master/LICENSE")))
+                .license(new License().name("GPLv3").url("https://github.com/mnavasloro/ixasrl/blob/master/LICENSE")))
                 .externalDocs(new ExternalDocumentation()
                 .description("Ontology Engineering Group - Universidad Politécnica de Madrid")
                 .url(""));
