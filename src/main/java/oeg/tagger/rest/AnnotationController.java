@@ -323,7 +323,7 @@ public String annotate2(String txt) {
 //        
         } catch (Exception e) {
             
-            return "";
+            return e.toString();
         }
 
         return res;
