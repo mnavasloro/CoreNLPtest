@@ -30,8 +30,8 @@ public class SwaggerConfig {
     
     @Bean
     public OpenAPI springShopOpenAPI() {
-        return new OpenAPI().addServersItem(new Server().url("https://ixasrl.linkeddata.es")).components(new Components().addSecuritySchemes("basicScheme",
-					new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("basic")))
+        return new OpenAPI().addServersItem(new Server().url("https://ixasrl.linkeddata.es"))
+                //.components(new Components().addSecuritySchemes("basicScheme",					new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("basic")))
                 .info(new Info().title("Lemmatization, pos tagging and semantic role labelling API")
                 .description("For internal consumption only - Excuse our lazy coding here.")
                 .version("1.0")
