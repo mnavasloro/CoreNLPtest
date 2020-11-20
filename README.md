@@ -1,7 +1,7 @@
 # ixasrl
 Using IXA models for lemmatization, pos tagging, dependencies and  and semantic role labelling (tokenization and sentence splitting from CoreNLP).
 
-Two services available for Spanish:
+Two services available for Spanish, [available here with Swagger Documentation](https://protect.oeg.fi.upm.es/ixasrl/swagger-ui):
 
 ## POS and LEMMA
 > '/pos'
