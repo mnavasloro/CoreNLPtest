@@ -48,7 +48,7 @@ public class AnnotationController {
     AnnotateNew annotator;
 
 
-    @Operation(summary = "Annotates every possible temporal entity", description = "", tags = "annotation")
+    @Operation(summary = "Tags lemmas and POS in a sentence (returns JSON)", description = "", tags = "annotation")
     @ApiResponses(value = {
     @ApiResponse(responseCode = "200", description = "Successfully annotated"),
     @ApiResponse(responseCode = "403", description = "Access denied"),
@@ -74,7 +74,7 @@ public class AnnotationController {
     
     
     
-    @Operation(summary = "Annotates every possible temporal entity", description = "", tags = "annotation")
+    @Operation(summary = "Annotate Semantic Role Labelling and Dependencias (returns XML NAF format)", description = "", tags = "annotation")
     @ApiResponses(value = {
     @ApiResponse(responseCode = "200", description = "Successfully annotated"),
     @ApiResponse(responseCode = "403", description = "Access denied"),
