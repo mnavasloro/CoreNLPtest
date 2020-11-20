@@ -1,9 +1,11 @@
 package oeg.tagger.rest;
 
+import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,8 +30,8 @@ public class SwaggerConfig {
     
     @Bean
     public OpenAPI springShopOpenAPI() {
-        return new OpenAPI()..addServersItem(new Server().url("https://ixasrl.linkeddata.es")).components(new Components().addSecuritySchemes("basicScheme",
-					new SecurityScheme().type(SecurityScheme.Type.HTTPS).scheme("basic")))
+        return new OpenAPI().addServersItem(new Server().url("https://ixasrl.linkeddata.es")).components(new Components().addSecuritySchemes("basicScheme",
+					new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("basic")))
                 .info(new Info().title("Lemmatization, pos tagging and semantic role labelling API")
                 .description("For internal consumption only - Excuse our lazy coding here.")
                 .version("1.0")
