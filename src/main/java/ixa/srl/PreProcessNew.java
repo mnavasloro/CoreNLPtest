@@ -61,7 +61,7 @@ public class PreProcessNew {
 			throws Exception {
 
 //		String jarpath = this.getClass().getResource("").getPath();
-		String jarpath = "./src/main/resources/";
+		String jarpath = "src/main/resources/";
 //		Matcher matcher = JARPATH_PATTERN_BEGIN.matcher(jarpath);
 //		jarpath = matcher.replaceAll("");		
 //		matcher = JARPATH_PATTERN_END.matcher(jarpath);
@@ -69,9 +69,9 @@ public class PreProcessNew {
 
 		String[] models = new String[3];
                 
-                models[0] = jarpath+ "models\\spa\\CoNLL2009-ST-Spanish-ALL.anna-3.3.parser.model";
-                models[1] = jarpath+ "models\\spa\\srl-spa.model";
-                models[2] = jarpath+ "models\\spa\\CoNLL2009-ST-Spanish-ALL.anna-3.3.morphtagger.model";
+                models[0] = jarpath+ "models/spa/CoNLL2009-ST-Spanish-ALL.anna-3.3.parser.model";
+                models[1] = jarpath+ "models/spa/srl-spa.model";
+                models[2] = jarpath+ "models/spa/CoNLL2009-ST-Spanish-ALL.anna-3.3.morphtagger.model";
                 
                 File f = new File(models[0]);
                 models[0] = f.getAbsolutePath();
