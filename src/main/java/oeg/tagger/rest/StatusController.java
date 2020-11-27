@@ -24,5 +24,13 @@ public class StatusController {
             return new ResponseEntity(out, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/statuspost", method = RequestMethod.POST)
+    public ResponseEntity<String> statuspost(@RequestBody String body)
+    {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("errorcode", "ok " + body);
+            String out = jsonObject.toString();
+            return new ResponseEntity(out, HttpStatus.OK);
+    }
     
 }
